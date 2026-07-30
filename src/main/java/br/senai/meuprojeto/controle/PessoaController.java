@@ -16,6 +16,7 @@ public class PessoaController {
     public Pessoa getPessoa() {
         // Instancia um objeto Pessoa populado com dados fictícios
         return new Pessoa(
+                null,
                 "Carlos Eduardo",
                 "(41) 99999-8888",
                 28,

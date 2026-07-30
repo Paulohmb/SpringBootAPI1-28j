@@ -1,9 +1,21 @@
 package br.senai.meuprojeto.modelo;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+@Entity
+@Table(name = "pessoa")
 public class Pessoa {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     private String nome;
     private String telefone;
@@ -11,8 +23,13 @@ public class Pessoa {
     private LocalDate dataContrato;
     private BigDecimal salario;
 
+    // Construtor vazio (obrigatório para o JPA)
+    public Pessoa() {
+    }
+
     // Construtor completo
-    public Pessoa(String nome, String telefone, int idade, LocalDate dataContrato, BigDecimal salario) {
+    public Pessoa(Long id, String nome, String telefone, int idade, LocalDate dataContrato, BigDecimal salario) {
+        this.id = id;
         this.nome = nome;
         this.telefone = telefone;
         this.idade = idade;
@@ -21,6 +38,14 @@ public class Pessoa {
     }
 
     // Getters e Setters
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public String getNome() {
         return nome;
     }
