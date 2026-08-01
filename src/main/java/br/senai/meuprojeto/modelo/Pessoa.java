@@ -19,7 +19,7 @@ public class Pessoa {
 
     private String nome;
     private String telefone;
-    private int idade;
+    private Integer idade;
     private LocalDate dataContrato;
     private BigDecimal salario;
 
@@ -28,7 +28,7 @@ public class Pessoa {
     }
 
     // Construtor completo
-    public Pessoa(Long id, String nome, String telefone, int idade, LocalDate dataContrato, BigDecimal salario) {
+    public Pessoa(Long id, String nome, String telefone, Integer idade, LocalDate dataContrato, BigDecimal salario) {
         this.id = id;
         this.nome = nome;
         this.telefone = telefone;
@@ -66,7 +66,7 @@ public class Pessoa {
         return idade;
     }
 
-    public void setIdade(int idade) {
+    public void setIdade(Integer idade) {
         this.idade = idade;
     }
 

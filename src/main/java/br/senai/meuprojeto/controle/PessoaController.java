@@ -54,4 +54,6 @@ public class PessoaController {
         pessoaRepository.deleteById(id);
         return ResponseEntity.noContent().build();
     }
+
 }
+
